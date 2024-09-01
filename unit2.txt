@@ -1,0 +1,955 @@
+--------------------DSA uni2  lec 8 -----------------
+
+
+Suresh wants to create a program that allows him to create a linked list of integers. Suresh should enter the number of elements he wants to add to the linked list. Then, he should enter each element one by one and add them to the linked list. Finally, display the contents of the linked list. Suresh should note that the code handles an empty list case and prints a message if the list is empty.
+
+
+
+Note: This is a sample question asked in an Accenture interview.
+
+Input format :
+The first line of input contains an integer numElements, representing the number of elements to be added to the linked list.
+
+The next numElements lines contain an integer each, representing the elements to be added to the linked list.
+
+Output format :
+The output displays the elements of the linked list, separated by a space.
+
+If the linked list is empty, the program will output "The list is empty."
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+1<=numElements<=20
+
+Sample test cases :
+Input 1 :
+4
+7 8 6 4
+Output 1 :
+7 8 6 4 
+Input 2 :
+0
+Output 2 :
+The list is empty.
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+
+struct node {
+    int data;
+    struct node* next;
+};
+
+
+
+int main(){
+    int a;
+    scanf("%d",&a);
+    
+    struct node *new1 , *temp , *head=NULL;
+    for(int i=0;i<a;i++){
+        new1=(struct node*)malloc(sizeof(struct node));
+        scanf("%d",&new1->data);
+        new1->next=NULL;
+    
+        if(head==NULL){
+            head=new1;
+    }
+    else{
+        temp=head;
+        while(temp->next != NULL){
+            temp=temp->next;
+        }
+        temp->next=new1;
+    }
+    }
+    if(head==NULL){
+        printf("The list is empty.");
+    }
+    else{
+        struct node *temp=head;
+        while(temp!=NULL){
+            printf("%d ",temp->data);
+            temp=temp->next;
+        }
+        printf("\n");
+    }
+}
+
+
+
+
+
+
+
+
+You are developing a text editor application that allows users to manage a document. The application uses a linked list data structure to represent the document content. Each node of the linked list contains a string representing a line of text.
+
+
+
+The application supports two operations: inserting new string values at the beginning of the document and appending a new string at the end of the document.
+
+
+
+If no input string list is created and if no value is appended to the list, then an empty list should be returned as output.
+
+
+
+Note: This is a sample question asked in a Capgemini interview.
+
+Input format :
+The first line of input consists of an integer, n representing the number of lines in the document.
+
+The next n lines of input consist of the lines of text that constitute the document.
+
+The last line of input consists of a string, s, which needs to be appended at the end of the document.
+
+Output format :
+The first line of output should print the initial document content, which inserts the given n values at the beginning.
+
+The second line of output should print the final document content, which appends the given value s at the end of the document.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+n>0
+
+The length of each line should be less than or equal to 100 characters.
+
+Sample test cases :
+Input 1 :
+3
+Apple
+Banana
+Orange
+Grapes
+Output 1 :
+Document: Orange Banana Apple
+Updated Document: Orange Banana Apple Grapes
+Input 2 :
+2
+Hello
+World
+Space
+Output 2 :
+Document: World Hello
+Updated Document: World Hello Space
+Input 3 :
+0
+Output 3 :
+Document:
+Updated Document: 
+
+
+
+
+
+
+
+
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+struct node {
+    string data;
+    struct node* next;
+};
+
+
+int main(){
+    int a;
+    cin>>a;
+    struct node *head=NULL,*temp,*new1;
+    for(int i=0;i<a;i++){
+        new1=new node;
+        cin>>new1->data;
+        new1->next=head;
+        head=new1;
+        }
+    
+    cout<<"Document: ";
+    temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    new1=new node;
+    cin>>new1->data;
+    new1->next=NULL;
+    if(head==NULL){
+        head=new1;
+    }
+    else{
+        temp=head;
+        while(temp->next!=NULL){
+            temp=temp->next;
+            }
+            temp->next=new1;
+    }
+    cout<<endl<<"Updated Document: ";
+    temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jaanu wants to create a program that allows her to create a linked list of strings. Jaanu to enter the number of strings she wants to insert into the linked list. Then, she should enter each string one by one and insert them at the end of the linked list. After that, ask Jaanu to enter a new string, which will be appended at the end of the linked list. Finally, display the contents of the linked list.
+
+
+
+Note: This is a sample question asked in a TCS interview.
+
+Input format :
+The first line contains an integer, num_of_strings, representing the number of strings in the linked list.
+
+The next num_of_strings lines contain the strings that constitute the linked list.
+
+The last line contains a string, new_string, which needs to be appended at the end of the linked list.
+
+Output format :
+The insert and append at the end of the linked lists after inserting the new node are in the format "Linked List Contents: <list values separated by space>".
+
+
+
+Refer to the sample output for format specifications.
+
+Code constraints :
+The number of strings should be a positive integer.
+
+The length of each string should be less than or equal to 100 characters.
+
+Sample test cases :
+Input 1 :
+3
+Apple
+Banana
+Orange
+Grapes
+Output 1 :
+Linked List Contents: Apple Banana Orange Grapes 
+Input 2 :
+2
+Hello
+World
+Space
+Output 2 :
+Linked List Contents: Hello World Space 
+Input 3 :
+0
+None
+None
+Output 3 :
+Linked List Contents: None 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+
+struct node{
+    string data;
+    struct node* next;
+};
+
+int main(){
+    int x;
+    cin>>x;
+    struct node* head=nullptr,*n,*temp;
+    for(int i=0;i<x;i++){
+        n=new node;
+        cin>>n->data;
+        n->next=nullptr;
+        if(head==nullptr){
+            head=n;
+        }
+    else{
+        temp=head;
+        while(temp->next!=NULL){
+            temp=temp->next;
+            }
+            temp->next=n;
+    }
+        
+    }
+        n=new node;
+        cin>>n->data;
+        n->next=nullptr;
+        if(head==nullptr){
+            head=n;
+        }
+    else{
+        temp=head;
+        while(temp->next!=NULL){
+            temp=temp->next;
+            }
+            temp->next=n;
+    }
+    cout<<"Linked List Contents: ";
+    temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+Uma wants to create a program that allows her to build a linked list by inserting nodes at the end. She wants to be able to input the data for each node and specify when to stop inserting nodes (a negative value is entered, indicating the end of the input). After inserting the nodes, she wants to display the contents of the linked list.
+
+
+
+Note: This is a sample question asked in a Wipro interview.
+
+Input format :
+The input consists of an integer value for each node to be inserted at the end of the linked list.
+
+After inserting each node, enter a non-negative integer indicating the value of the next node to be inserted. If a negative integer is entered, it indicates the end of node insertion.
+
+The input terminates when a negative integer is entered.
+
+Output format :
+If the linked list is empty, the output displays the message "Linked List is empty." on a new line.
+
+If the linked list is not empty, the output displays the contents of the linked list in a space-separated format on a new line, preceded by the text "Linked List: ".
+
+Each node's data is displayed in the order it was inserted.
+
+
+
+Refer to the sample output for format specifications.
+
+Code constraints :
+The elements of the linked list are integers.
+
+The input will be a series of integers, terminated by a negative value.
+
+The input values can be positive or zero.
+
+Sample test cases :
+Input 1 :
+1
+2
+3
+4
+-1
+Output 1 :
+Linked List: 1 2 3 4 
+Input 2 :
+-2
+Output 2 :
+Linked List is empty.
+Input 3 :
+2000
+-3000
+4000
+-5000
+-1
+Output 3 :
+Linked List: 2000 
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+
+struct node {
+    int data;
+    struct node* next;
+};
+
+
+
+int main(){
+    int a;
+    scanf("%d",&a);
+    struct node* head=NULL,*temp,*new1;
+while(a>=0){
+        new1=(struct node*)malloc(sizeof(struct node));
+        new1->data=a;
+        new1->next=NULL;
+    
+        if(head==NULL){
+            head=new1;
+    }
+    else{
+        temp=head;
+        while(temp->next != NULL){
+            temp=temp->next;
+        }
+        temp->next=new1;
+    }
+        scanf("%d",&a);
+    }
+    
+    
+    
+    if(head==NULL){
+        printf("Linked List is empty.");
+    }
+    else{
+        temp=head;
+        printf("Linked List: ");
+        while(temp!=NULL){
+            printf("%d ",temp->data);
+            temp=temp->next;
+        }
+        printf("\n");
+    }
+}
+
+
+
+
+
+
+---------------DSA lec 8------------------
+
+
+
+
+
+-------------------DSA lec 9--------------------
+
+Problem Statement
+
+
+
+Imagine you are a cashier working at a grocery store. As customers come to your register, you scan each item and add it to a linked list to keep track of the purchases. Each node in the linked list represents an item, and it contains the price of the item and a reference to the next item.
+
+
+
+At the end of the day, you need to calculate the sum of the prices of the last m items sold. This information is important for inventory management and financial reporting purposes. By knowing the sum of the last m items, you can keep track of the total revenue generated and ensure accurate stock management.
+
+
+
+Given a linked list and a number m. Find the sum of the last m nodes of the linked list.
+
+
+
+Note: This question is asked in Adobe.
+
+Input format :
+The first line of input consists of the size n.
+
+The second line of input consists of n elements, separated by space.
+
+The third line of input consists of the value of m.
+
+Output format :
+The output prints the sum of the last m nodes of the given linked list.
+
+Code constraints :
+0 < n <=100
+
+0 < m <= 100
+
+Sample test cases :
+Input 1 :
+6
+3 1 0 4 30 12
+3
+Output 1 :
+46
+Input 2 :
+10
+7 4 1 2 5 8 0 3 6 9
+5
+Output 2 :
+26
+
+
+
+
+#include<iostream>
+using namespace std;
+
+struct node {
+    int data;
+    struct node* next;
+};
+
+
+int main(){
+    int x;
+    cin>>x;
+    struct node* head=nullptr,*n,*temp;
+    for(int i=0;i<x;i++){
+        n= new node;
+        cin>>n->data;
+        n->next=head;
+        head=n;
+    }
+    int m,sum=0;
+    cin>>m;
+    temp=head;
+    for(int i=0;i<m;i++){
+        sum+=temp->data;
+        temp=temp->next;
+    }
+    cout<<sum;
+}
+
+
+
+
+
+
+
+
+
+
+Problem Statement
+
+
+
+You are developing a smart device that reads binary data from sensors installed in various locations. Each sensor generates a stream of binary data, and the binary values are stored in a linked list. Your task is to implement a function that calculates the decimal value of the binary data represented by the linked list.
+
+
+
+The linked list represents the binary representation of a number, with the most significant bit at the head of the linked list. Your function should traverse the linked list and calculate the decimal value of the binary number. 
+
+
+
+Note: This is a sample question asked in the Google interview.
+
+Input format :
+The input consists of a singly-linked list representing the binary data.
+
+Each node in the linked list contains a value of either 0 or 1.
+
+Output format :
+The output is the decimal value calculated from the binary data represented by the linked list.
+
+Code constraints :
+The number of nodes will not exceed 30.
+
+Each node's value is either 0 or 1.
+
+The binary data is guaranteed to be a valid representation of a non-negative integer.
+
+The most significant bit is located at the head of the linked list.
+
+Sample test cases :
+Input 1 :
+3
+1 0 1
+Output 1 :
+Linked List: 1 0 1 
+Decimal Value: 5
+Input 2 :
+0
+Output 2 :
+Linked List: Empty linked list
+Decimal Value: 0
+
+
+
+
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+struct node{
+    int data;
+    struct node* next;
+};
+int main(){
+    int x;
+    cin>>x;
+    struct node *head=nullptr,*new1,*temp;
+    for(int i=0;i<x;i++){
+        new1 = new node;
+        cin>>new1->data;
+        new1->next=NULL;
+    
+        if(head==NULL){
+            head=new1;
+    }
+    else{
+        temp=head;
+        while(temp->next != NULL){
+            temp=temp->next;
+        }
+        temp->next=new1;
+    }}
+    if(head==NULL){
+        printf("Linked List: ");
+        printf("Empty linked list");
+        printf("\nDecimal Value: 0");
+       return 0;
+    }
+    else{
+        temp=head;
+        printf("Linked List: ");
+        while(temp!=nullptr){
+            printf("%d ",temp->data);
+            temp=temp->next;
+        }
+        printf("\nDecimal Value: ");
+    }
+    int dec=0;
+        temp=head;
+        x--;
+    while (temp != nullptr) {
+            dec = (dec << 1) | temp->data;
+            temp = temp->next;
+        }
+        cout << dec << endl;
+
+    }
+
+
+
+
+
+
+
+
+
+
+    Problem Statement
+
+
+
+You are tasked with creating a program that processes a linked list containing integer data and rearranges its nodes. Specifically, your program should separate the even and odd integers, placing the even integers before the odd ones while maintaining their original order within each group.
+
+
+
+Note: The new nodes are inserted at the beginning of the linked list.
+
+
+
+Example
+
+
+
+Input:
+
+linked list = 1 2 3 4
+
+
+
+Output:
+
+4 2 3 1
+
+
+
+Explanation:
+
+Initially, the linked list contains four nodes with the values: 1 2 3 4.
+
+The new nodes are inserted at the beginning of the list. So, after insertion, the nodes will be in the order: 4 3 2 1.
+
+Now, rearrange the linked list to position even numbers before odd numbers while preserving their order.
+
+The resulting rearranged linked list is 4 2 3 1.
+
+Input format :
+The first line of input consists of an integer N, representing the number of elements in the linked list.
+
+The second line consists of N space-separated integers, representing the elements in the linked list.
+
+Output format :
+The output displays the rearranged list, containing the even numbers followed by the odd numbers.
+
+Sample test cases :
+Input 1 :
+4
+1 2 3 4
+Output 1 :
+4 2 3 1 
+Input 2 :
+5
+12 15 13 14 16
+Output 2 :
+16 14 12 13 15 
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+
+struct node {
+    int data;
+    struct node* next;
+};
+
+
+int main(){
+    int x;
+    cin>>x;
+    struct node* head=nullptr,*n,*temp;
+    for(int i=0;i<x;i++){
+        n= new node;
+        cin>>n->data;
+        n->next=head;
+        head=n;
+    }
+    temp=head;
+        while(temp!=nullptr){
+            if(temp->data%2==0){
+            cout<<temp->data<<" ";}
+            temp=temp->next;
+        }
+    temp=head;
+        while(temp!=nullptr){
+            if(temp->data%2!=0){
+            cout<<temp->data<<" ";}
+            temp=temp->next;
+        }
+}
+
+
+
+
+
+
+
+
+Problem Statement
+
+
+
+You are working on a sales data management system. The sales data for each day is represented by two linked lists, where each node contains the sales values. Your task is to calculate the total sales by adding the sales values from the two linked lists and returning the result in a new linked list.
+
+
+
+Note: This is the sample question asked in Amazon's recruitment
+
+Input format :
+The first line of input consists of an integer N, representing the number of nodes in the first linked list.
+
+The second line consists of N space-separated integers, representing the sales values for each node in the first linked list.
+
+The third line consists of an integer M, representing the number of nodes in the second linked list.
+
+The fourth line consists of M space-separated integers, representing the sales values for each node in the second linked list.
+
+Output format :
+The first line of output prints the sales values of the first linked list, separated by space.
+
+The second line of output prints the sales values of the second linked list, separated by space.
+
+The third line prints the total sales, separated by space.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+The size of the first linked list (N) and the size of the second linked list (M) are non-negative integers.
+
+Sample test cases :
+Input 1 :
+2
+4 5 
+3
+3 4 5
+Output 1 :
+First linked list: 4 5 
+Second linked list: 3 4 5 
+Total Sales: 3 9 0 
+Input 2 :
+2
+6 3
+1
+7
+Output 2 :
+First linked list: 6 3 
+Second linked list: 7 
+Total Sales: 7 0 
+Input 3 :
+3
+1 3 5
+3
+2 3 4
+Output 3 :
+First linked list: 1 3 5 
+Second linked list: 2 3 4 
+Total Sales: 3 6 9
+
+
+
+
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Node {
+public:
+	int data;
+	Node* next;
+};
+
+Node* newNode(int data)
+{
+	Node* new_node = new Node();
+	new_node->data = data;
+	new_node->next = NULL;
+	return new_node;
+}
+
+void push(Node** head_ref, int new_data)
+{
+	Node* new_node = newNode(new_data);
+	new_node->next = (*head_ref);
+	(*head_ref) = new_node;
+}
+
+Node* addTwoLists(Node* first, Node* second)
+{
+	Node* res = NULL;
+	Node *temp, *prev = NULL;
+	int carry = 0, sum;
+	while (first != NULL || second != NULL) {
+		sum = carry + (first ? first->data : 0) + (second ? second->data : 0);
+		carry = (sum >= 10) ? 1 : 0;
+		sum = sum % 10;
+		temp = newNode(sum);
+		if (res == NULL)
+			res = temp;
+		else
+			prev->next = temp;
+		prev = temp;
+		if (first)
+			first = first->next;
+		if (second)
+			second = second->next;
+	}
+	if (carry > 0)
+		temp->next = newNode(carry);
+	return res;
+}
+
+Node* reverse(Node* head)
+{
+	if (head == NULL || head->next == NULL)
+		return head;
+	Node* rest = reverse(head->next);
+	head->next->next = head;
+	head->next = NULL;
+	return rest;
+}
+
+void printList(Node* node)
+{
+	while (node != NULL) {
+		cout << node->data << " ";
+		node = node->next;
+	}
+	cout << endl;
+}
+
+void printListReverse(Node* node)
+{
+    if (node == NULL)
+        return;
+    printListReverse(node->next);
+    cout << node->data << " ";
+}
+
+
+int main(void)
+{
+    int a,b;
+    cin>>a;
+	Node* res = NULL;
+	Node* first = NULL;
+	Node* second = NULL;
+	for(int i=0;i<a;i++){
+	    int x;
+	    cin>>x;
+	push(&first, x);}
+	
+	cout<<"First linked list: ";
+	printListReverse(first);
+	cout<<endl;
+    cin>>b;
+
+	for(int i=0;i<b;i++){
+	    int x;
+	    cin>>x;
+	    push(&second, x);}
+	
+	cout << "Second linked list: ";
+	printListReverse(second);
+	cout<<endl;
+
+
+	res = addTwoLists(first, second);
+
+	res = reverse(res);
+	cout << "Total Sales: ";
+	printList(res);
+	return 0;
+}
+

@@ -1,0 +1,1639 @@
+// -----------------------------c++ lec 4------------------------------------\\
+//time difference
+// // You are using GCC
+// #include<iostream>
+// #include<iomanip>
+// using namespace std;
+// struct Time{
+//     int h;
+//     int m;
+//     int s;
+// };
+
+// void calcDifference(const Time&t1,const Time&t2,Time&result){
+//     result.h=t1.h-t2.h;
+//     result.m=t1.m-t2.m;
+//     result.s=t1.s-t2.s;
+// }
+
+// int main(){
+//     string x;
+//     Time t1,t2,dif;   
+//     getline(cin,x);
+//     sscanf(x.c_str(),"%d:%d:%d",&t1.h,&t1.m,&t1.s);
+//     getline(cin,x);
+//     sscanf(x.c_str(),"%d:%d:%d",&t2.h,&t2.m,&t2.s);
+//     calcDifference(t1,t2,dif);
+//     // cout<<t1.h<<":"<<t1.m<<":"<<t1.s;
+//     cout<<setw(2)<<setfill('0')<<dif.h<<":"<<setw(2)<<dif.m<<":"<<setw(2)<<dif.s;
+//     return 0;
+// }
+
+
+
+
+
+//bank accoutn data
+
+// #include<iostream>
+// #include<string.h>
+// using namespace std;
+
+
+// union AccountData{};
+//   struct  bank{
+//       string name;
+//       int acc_no;
+//       float bal;
+//  }detail;
+
+
+// int main(){
+//     // AccountData mem;
+//     float dep,wit;
+//     getline(cin,detail.name);
+//     cin>>detail.acc_no;
+//     cin>>detail.bal;
+//     cin>>dep;
+//     cin>>wit;
+//     cout<<"Amount deposited successfully."<<endl;
+//     detail.bal+=dep;
+//     if(wit>detail.bal){
+//         cout<<"Insufficient balance. Withdrawal failed.";
+//     }
+//     else{
+//         cout<<"Amount withdrawn successfully."<<endl;
+//         detail.bal-=wit;
+//     }
+//     cout<<"Account details:"<<endl<<"Account holder's name: "<<detail.name<<endl<<"Account number: "<<detail.acc_no<<endl<<"Balance: "<<detail.bal;
+//     return 0;
+// }
+
+
+
+
+
+
+
+//enum month days
+
+// // You are using GCC
+// #include<iostream>
+// using namespace std;
+// class Year {
+//     public:
+//     enum Month{
+//     JAN=1,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEPT,OCT,NOV,DEC
+//     };
+    
+// };
+
+// int main(){
+//     int x;
+//     cin>>x;
+//     if (x>=Year::Month::JAN && x<=Year::Month::DEC){
+//         switch(static_cast<Year::Month>(x)){
+        
+//             case Year::Month::JAN:{ cout<<"Month: JANUARY";break;}
+//             case Year::Month::FEB: {cout<<"Month: FEBRUARY";break;}
+//             case Year::Month::MAR: {cout<<"Month: MARCH";break;}
+//             case Year::Month::APR: {cout<<"Month: APRIL";break;}
+//             case Year::Month::MAY: {cout<<"Month: MAY";break;}
+//             case Year::Month::JUN: {cout<<"Month: JUNE";break;}
+//             case Year::Month::JUL: {cout<<"Month: JULY";break;}
+//             case Year::Month::AUG: {cout<<"Month: AUGUST";break;}
+//             case Year::Month::SEPT: {cout<<"Month: SEPTEMBER";break;}
+//             case Year::Month::OCT: {cout<<"Month: OCTOBER";break;}
+//             case Year::Month::NOV: {cout<<"Month: NOVEMBER";break;}
+//             case Year::Month::DEC: {cout<<"Month: DECEMBER";break;}
+//     }}                                                                      
+//     else{
+//         cout<<"Invalid month input";
+//     }
+    
+// }
+
+
+
+// DEPT structure 
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+
+
+// struct DEPT{
+//     string name;
+//     int emp_id;
+//     int year;
+//     int salary;
+// };
+
+
+// int main(){
+//     int x;
+//     cin>>x;
+//     DEPT a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i].name;
+//         cin>>a[i].emp_id;
+//         cin>>a[i].year;
+//         cin>>a[i].salary;
+//     }
+//     for(int i=0;i<x;i++){
+//         if(a[i].year>=10)
+//         a[i].salary+=(a[i].salary/10);
+    
+//         else if(a[i].year>=5 && a[i].year<=9)
+//         a[i].salary+=(a[i].salary/20);
+    
+//        else
+//         a[i].salary+=(a[i].salary/50);
+//     }
+//     for(int i=0;i<x;i++){
+//         cout<<"Employee Name : "<<a[i].name<<endl;
+//         cout<<"Employee Id : "<<a[i].emp_id<<endl;
+//         cout<<"years of experience : "<<a[i].year<<endl;
+//         cout<<"salary : "<<a[i].salary<<endl<<endl;
+//     }
+    
+// }
+
+// -----------------------------c++ lec 4------------------------------------\\
+
+
+
+
+
+
+
+
+// -----------------------------dsa lec 3------------------------------------\\
+
+
+//print array frequecy
+
+
+
+// #include<iostream>
+
+// using namespace std;
+// int main(){
+
+//     int x;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++)
+//     cin>>a[i];
+    
+//     int freq[1000]={0};
+//     for(int i=0;i<x;i++){
+//         freq[a[i]]++;
+//     }
+//     cout<<"Element   Frequency";
+//     bool print[1000]={false};
+//     for(int i=0;i<x;i++){
+//         if(!print[a[i]]>0){
+//             print[a[i]]=true;
+//             cout<<a[i]<<"         "<<freq[a[i]]<<endl;
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+// string strarting with char
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x;
+//     cin>>x;
+//     string s[x];
+//     for(int i=0;i<x;i++){
+//         cin>>s[i];
+//     }
+//     int count;
+//     char f;
+//     cin>>f;
+//     for(int i=0;i<x;i++){
+//         if(s[i][0]==f)
+//         count++;
+//     }
+//     cout<<"Number of strings starting with the letter "<<f<<" : "<<count;
+//     return 0;
+// }
+
+
+
+
+
+//second smallest number
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     int i=0;
+//     while(i<x-1){
+//         if(a[i]>a[i+1]){
+//             int temp=a[i];
+//             a[i]=a[i+1];
+//             a[i+1]=temp;
+//             i=0;
+//         }
+//         else
+//         i++;
+//     }
+//     cout<<"Second Smallest Element: "<<a[1];
+    
+//     return 0;
+// }
+
+
+
+
+
+
+
+// reverse array
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x;
+//     cin>>x;
+//     char a[x];
+//     for (int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     cout<<"Updated array: ";
+//     for (int i=x-1;i>-1;i--){
+//         cout<<a[i]<<" ";
+//     }
+//     return 0;
+// }
+
+
+
+
+// shift array 
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int size,j=0,shift;
+//     cin>>size;
+//     int arr[size],arr1[size];
+//     for (int i=0;i<size;i++){
+//         cin>>arr[i];
+//     }
+//     cin>>shift;
+//     for (int i=0;i<size;i++){
+//        int f=(i+shift)%size;
+//        arr1[f]=arr[i];
+//     }
+//     cout<<"Original array: ";
+//     for(int i=0;i<size;i++){
+//         cout<<arr[i]<<" ";
+//     }
+//     cout<<endl<<"Updated array: ";
+//     for(int i=0;i<size;i++){
+//         cout<<arr1[i]<<" ";
+//     }
+//     return 0;
+// }
+
+
+
+//product of neighbor element
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//     int x;
+//     cin>>x;
+//     int a[50];
+//     int b[50];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     for(int i=0;i<x;i++){
+//         if(i==0){
+//             b[i]=a[i]*a[i+1];
+//         }
+//         else if(i==x-1){
+//             b[i]=a[i]*a[i-1];
+//         }
+//         else{
+//             b[i]=a[i-1]*a[i+1];
+//         }
+//     }
+//     for(int i=0;i<x;i++){
+//         cout<<b[i]<<" ";
+//     }
+// }
+
+
+
+
+
+//insert at thwe beggning
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//     int x;
+//     cin>>x;
+//     int arr[100];
+//     for(int i=0;i<x;i++){
+//         cin>>arr[i];
+//     }
+//     int v;
+//     cin>>v;
+//     cout<<"Original array: ";
+//     for(int i=0;i<x;i++){
+//         cout<<arr[i]<<" ";}
+        
+        
+//     for(int i=x-1;i>=0;i--){
+//         arr[i+1]=arr[i];
+//     }
+    
+    
+//     arr[0]=v;
+//     cout<<endl<<"Updated array: ";
+//     for(int i=0;i<=x;i++){
+//         cout<<arr[i]<<" ";
+//     }
+//     return 0;
+    
+// }
+
+
+
+
+
+
+// ---------------------------dsa lec 4-------------------
+// difference of 2 array
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x,y;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     cin>>y;
+//     int b[y];
+//     for(int i=0;i<y;i++){
+//         cin>>b[i];
+//     }
+//     int c[max(x,y)];
+//     for(int i=0;i<max(x,y);i++){
+//         if(i<x && i<y)
+//         c[i]=a[i]+b[i];
+//         else{
+//             if(x>y)
+//             c[i]=a[i];
+//             else
+//             c[i]=b[i];
+//         }
+        
+//     }
+//     for(int i=0;i<max(x,y);i++){
+//         cout<<c[i]*-1<<" ";
+//     }
+// }
+
+
+
+
+
+// most repeated element in2 array
+// // You are using GCC
+// #include<iostream>
+// #include<set>
+// using namespace std;
+
+// int main(){
+//     int x,y;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     cin>>y;
+//     int b[y];
+//     for(int i=0;i<y;i++){
+//         cin>>b[i];
+//     }
+//     int c[x+y];
+//     for(int i=0;i<x;i++){
+//         c[i]=a[i];
+//     }
+//     for(int i=0;i<y;i++){
+//         c[i+x]=b[i];
+//     }
+//     int freq[1000]={0};
+//     for(int i=0;i<x+y;i++){
+//         freq[c[i]]++;
+//     }
+//     int max=0,maxe=-1;
+//     for(int i=0;i<1000;i++){
+//         if(freq[i]>max){
+//             max=freq[i];
+//             maxe=i;
+//         }
+//     }
+//     cout<<maxe;
+// }
+
+
+
+
+
+// print unique element
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//     int x,y;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     cin>>y;
+//     int b[y];
+//     for(int i=0;i<y;i++){
+//         cin>>b[i];
+//     }
+//     int c[x+y];
+//     for(int i=0,f=0;i<x+y;i++){
+//         if(i<x)
+//         c[i]=a[i];
+//         else{
+//         c[i]=b[f];
+//         f++;}
+//     }
+//     int c1=0;
+//     for(int i=0;i<x+y;i++){
+//         c1=0;
+//         for(int j=i+1;j<x+y;j++){
+//             if(c[i]==c[j]){
+//                 c1++;
+//             }
+//         }
+//         if(c1==0){
+//             cout<<c[i]<<" ";
+//         }
+//     }
+    
+// }
+
+
+
+
+
+
+
+// count number  of element
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x=0,y=0;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     cin>>y;
+//     int b[y];
+//     for(int i=0;i<y;i++){
+//         cin>>b[i];
+//     }
+//     cout<<x+y;
+// }
+
+
+
+
+
+// assecnding order
+// #include<iostream>
+// #include<set>
+// using namespace std;
+// int main(){
+//     int x,y;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     cin>>y;
+//     int b[y+x];
+//     for(int i=0;i<x+y;i++){
+//         if(i<x)
+//         b[i]=a[i];
+//         else
+//         cin>>b[i];
+//     }
+//     bool swaped;
+//     do{
+//         swaped=false;
+//         for(int i=0;i<x+y-1;i++){
+//             if(b[i]>b[i+1]){
+//                 swap(b[i],b[i+1]);
+//                 swaped=true;
+//             }
+//         }
+//     }while(swaped);
+//     set<int>s;
+//     for(int i=0;i<x+y;i++){
+//         s.insert(b[i]);
+//     }
+//     for(auto it=s.begin();it!=s.end();it++)
+//     cout<<*it<<" ";
+    
+// }
+
+
+
+
+// print merged string array
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// int main(){
+//     int x,y;
+//     cin>>x;
+//     string a[x];
+//     cin.ignore();
+//     for(int i=0;i<x;i++){
+//     getline(cin,a[i]);}
+    
+//     cin>>y;
+//     string b[y];
+//     cin.ignore();
+//     for(int i=0;i<y;i++){
+//     getline(cin,b[i]);}
+    
+//     cout<<"Catalog:"<<endl;
+    
+//     for(int i=0;i<x;i++){
+//         cout<<a[i]<<endl;
+//     }
+    
+//     for(int i=0;i<y;i++){
+//         cout<<b[i]<<endl;
+//     }
+// }
+
+
+
+
+// add 2 string and reverse it
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x,y,c;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++){
+//     cin>>a[i];}
+//     cin>>y;
+//     int b[y];
+//     for(int i=0;i<y;i++){
+//         cin>>b[i];
+//     }
+//     if(x>=y){
+//         for(int i=0;i<y;i++){
+//             a[i]+=b[i];
+//         }
+//         for(int i=x-1;i>-1;i--){
+//             cout<<a[i]<<" ";
+//         }
+//     }
+//     else{
+//         for(int i=0;i<x;i++){
+//             b[i]+=a[i];
+//         }
+//         for(int i=y-1;i>-1;i--){
+//             cout<<b[i]<<" ";
+//         }
+        
+//     }
+    
+// }
+
+
+
+
+
+
+//-------------------------------------------------------- dsa lec 5------------------------------------------
+//search in array
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x,y,flag=0;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     cin>>y;
+//     for(int i=0;i<x;i++){
+//         if(a[i]==y){
+//             flag=1;
+//         }
+//     }
+//     if(flag==1){
+//         cout<<"The target value "<<y<<" is present in the array.";
+//     }
+//     else{
+//         cout<<"The target value "<<y<<" is not present in the array.";
+//     }
+// }
+
+
+
+
+
+// find element less than guven
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x,y,count=0;
+//     cin>>x;
+//     int a[100];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     cin>>y;
+//     for(int i=0;i<x;i++){
+//         if(a[i]<=y){
+//             count++;
+//         }
+//     }
+//     cout<<count;
+//     return 0;
+// }
+
+
+
+//count number of words
+// #include<iostream>
+// #include<sstream>
+// using namespace std;
+
+
+// int main(){
+//     string a;
+//     getline(cin,a);
+//     // cout<<a;
+//     int i=0,count=0;
+//     stringstream ss(a);
+//     string word;
+//     while(ss>>word){
+//         count++;
+//     }
+//     cout<<count;
+// }
+
+
+
+
+
+
+
+// find index 
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x,y,flag=-1;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     cin>>y;
+//     for(int i=0;i<x;i++){
+//         if(a[i]==y){
+//             flag=i;
+//         }
+//     }
+//     if(flag!=-1){
+//         cout<<"Target found at index: "<<flag;
+//     }
+//     else{
+//         cout<<flag;
+//     }
+// }
+
+
+
+
+
+// peak value
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     for(int i=0;i<x;i++){
+//         if(i==0){
+//             if(a[0]>a[1]){
+//                 cout<<a[0]<<" ";
+//             }
+//         }
+//         else if(i==x-1){
+//             if(a[x-1]>a[x-2]){
+//                 cout<<a[x-1]<<" ";
+//             }
+//         }
+//         else{
+//             if(a[i]>a[i-1] && a[i]>a[i+1]){
+//                 cout<<a[i]<<" ";
+//             }
+//         }
+//     }
+// }
+
+
+
+
+
+// first occorence of element
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+// int isFruitPresent(string arr[],int x,string q){
+//     int k=-1;
+//     for(int i=0;i<x;i++){
+//         if(arr[i]==q){
+//             k=i;
+//         }
+//     }
+//     if(k!=-1){
+//         cout<<"The first occurrence of \""<<q<<"\" is at index "<<k<<".";
+//     }
+//     else{
+//         cout<<"\""<<q<<"\" is not found in the array.";
+//     }
+//     return 0;
+// }
+
+// int main(){
+//     int x;
+//     cin>>x;
+//     string a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     string y;
+//     cin>>y;
+//    isFruitPresent(a,x,y);
+// }
+
+
+
+
+
+
+
+
+
+// --------------------lec 6 dsa------------------
+
+
+
+// bubble sort
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     cout<<"Original array: "<<endl;
+//     for(int i=0;i<x;i++){
+//         cout<<a[i]<<" ";
+//     }
+//     cout<<endl;
+//     for(int i=0;i<x-1;++i){
+//         for(int j=0;j<x-i-1;++j){
+//         if(a[j]>a[j+1]){
+//             int temp=a[j];
+//             a[j]=a[j+1];
+//             a[j+1]=temp;
+//         }            
+//         }
+//         cout<<"Iteration "<<i+1<<": ";
+//     for(int f=0;f<x;f++){
+//         cout<<a[f]<<" ";
+//     }
+//     cout<<endl;
+        
+//     }
+//     cout<<"Sorted array: ";
+//     for(int i=0;i<x;i++){
+//         cout<<a[i]<<" ";
+//     }
+//     }
+
+
+
+
+
+
+
+// decending insertion sort
+// You are using GCC
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     cout<<"Initial order: ";
+//     for(int i=0;i<x;i++){
+//         cout<<a[i]<<" ";
+//     }
+//     cout<<endl;
+    
+//     for(int i=1;i<x;i++){
+//         int temp=a[i];
+//         int j=i-1;
+//         while(temp>a[j] && j>=0){
+//             a[j+1]=a[j];
+//             j--;
+//         }
+//     a[j+1]=temp;
+//         cout<<"After Iteration "<<i<<": ";
+//         for(int i=0;i<x;i++){
+//             cout<<a[i]<<" ";
+//     }
+//     cout<<endl;
+        
+//     }
+//     cout<<"Sorted order: ";
+//     for(int i=0;i<x;i++){
+//         cout<<a[i]<<" ";
+//     }
+    
+// }
+
+
+
+
+
+// assending insertion sort float
+// You are using GCC
+// #include<iostream>
+// #include<iomanip>
+// using namespace std;
+// int main(){
+//     int x;
+//     cin>>x;
+//     float a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     cout<<"Initial order: ";
+//     for(int i=0;i<x;i++){
+//         cout<<setprecision(4)<<a[i]<<" ";
+//     }
+//     cout<<endl;
+//     for(int i=1;i<x;i++){
+//         float temp=a[i];
+//         int j=i-1;
+//         while(temp<a[j] && j>=0){
+//             a[j+1]=a[j];
+//             --j;
+//         }
+//         a[j+1]=temp;
+//         cout<<"After Iteration "<<i<<": ";
+//         for(int i=0;i<x;i++){
+//             cout<<setprecision(4)<<a[i]<<" ";
+//     }
+//     cout<<endl;
+        
+//     }
+//     cout<<"Sorted order: ";
+//     for(int i=0;i<x;i++){
+//         cout<<setprecision(4)<<a[i]<<" ";
+//     }
+    
+    
+// }
+
+
+
+
+
+// selction sort string
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x;
+//     cin>>x;
+//     string a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     cout<<"Initial order: ";
+//     for(int i=0;i<x;i++){
+//         cout<<a[i]<<" ";
+//     }
+//     for(int i=0;i<x-1;i++){
+//         int min=i;
+//         for(int j=i+1;j<x;j++){
+//             if(a[j]<a[min]){
+//                 min=j;
+//             }
+//         }
+//         if(min!=i){
+//             swap(a[i],a[min]);
+//         }
+//     cout<<"\nAfter Iteration "<<i+1<<": ";
+//     for(int i=0;i<x;i++){
+//         cout<<a[i]<<" ";
+//     }
+//     }
+//     cout<<"\nSorted order: ";
+//     for(int i=0;i<x;i++){
+//         cout<<a[i]<<" ";
+//     }
+    
+// }
+
+
+
+
+
+// selection sort intergers
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//     int x;
+//     cin>>x;
+//     int a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     for(int i=0;i<x-1;i++){
+//         int min=i;
+//         for(int j=i+1;j<x;j++){
+//             if(a[j]>a[min]){
+//             min=j;}
+//         }
+//     if(min!=i){
+//         swap(a[i],a[min]);
+//     }}
+//     cout<<"Sorted array: ";
+//     for(int i=0;i<x;i++){
+//         cout<<a[i]<<" ";
+//     }
+//     cout<<"\nThe second largest element is "<<a[1];
+    
+    
+// }
+
+
+
+
+// -----------------------c++ lecture 5
+
+// date month year hour minute
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int d,m,y,h,M;
+//     cin>>h>>m>>d>>M>>y;
+//     if(d>0 && d<32 && M>0 && M<13 && y>0 && y<10000 && h>0 && h<25 && m>0 && m<61){
+//         cout<<"Date:"<<d<<"-"<<M<<"-"<<y<<endl;
+//         cout<<"Time:"<<h<<" hrs "<<m<<" mins"<<endl;
+//         cout<<"Total mins:"<<h*60 + m;
+//     }
+//     else{
+//         cout<<"Invalid";
+//     }
+// }
+
+
+
+
+
+// length,upper,lower,connt
+// #include<iostream>
+// #include<cctype>
+// #include<string>
+// using namespace std;
+
+
+// class StringManipulator{
+//     private:
+//         const string s;
+//     public:
+//         int countCharacters() const;
+//         int findLength() const;
+//         void convertToUppercase() const;
+//         void convertToLowercase() const;
+//         void setString() const;
+// };
+
+
+// int main(){
+//     StringManipulator m;
+//     m.setString();
+//     cout<<"Number of characters: "<<m.countCharacters()<<endl;
+//     cout<<"Length of the string: "<<m.findLength()<<endl;
+//     m.convertToUppercase();
+//     m.convertToLowercase();
+//     return 0;
+    
+// }
+// int StringManipulator::countCharacters()const{
+//     return s.size();
+// }
+// int StringManipulator::findLength()const{
+//     return s.length();
+// }
+// void StringManipulator::convertToUppercase()const{
+//     string u=s;
+//     for(char& c: u){
+//         c=toupper(c);
+//     }
+//     cout<<"Uppercase string: "<<u<<endl;
+// }
+// void StringManipulator::convertToLowercase()const{
+//     string u=s;
+//     for(char& c: u){
+//         c=tolower(c);
+//     }
+//     cout<<"Lowercase string: "<<u<<endl;
+// }
+// void StringManipulator::setString() const{
+//     getline(cin,const_cast<string&>(s));
+// }
+
+
+
+
+
+
+
+
+// gcd
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+
+// int gcd(int a,int b){
+//     if(b==0){
+//         return a;
+//     }else{
+//     return gcd(b,a%b);}
+// }
+
+
+// int main(){
+//     int a,b;
+//     cin>>a>>b;
+//     cout<<gcd(a,b);
+// }
+
+
+
+
+
+// total sales
+// #include<iostream>
+// #include<iomanip>
+// using namespace std;
+
+
+
+// class Shop{
+//     private:
+//         static double totalSales;
+//     public:
+//         static void addSales(double salesAmount){
+//             totalSales+=salesAmount;
+//         }
+//         static void print(){
+//             cout<<fixed<<setprecision(2);
+//             cout<<"Total Sales: "<<totalSales;
+//         }
+// };
+// double Shop::totalSales=0.0;
+
+
+
+// int main(){
+//     int x;
+//     cin>>x;
+//     double add=0.0;
+//     for(int i=0;i<x;i++){
+//         cin>>add;
+//         Shop::addSales(add);
+//     }
+//     Shop::print();
+//     return 0;
+// }
+
+
+
+
+
+// phone number
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+
+// class phone_number{
+//     private:
+//     string num;
+    
+//     public:
+//     void input(){
+//         cin>>num;
+//     }
+//     void output(){
+//         cout<<"Your entered number is:"<<num;
+//     }
+//     inline void check_num();
+// };
+// inline void phone_number::check_num(){
+//     if(num.length()==10){
+//         bool valid=true;
+//         for(char c:num){
+//             if(!isdigit(c)){
+//                 valid=false;
+//                 break;
+//             }
+//         }
+//         if(valid){
+//             output();
+//         }
+        
+//     else{
+//         cout<<"Entered Phone number is wrong"<<endl;
+//         output();
+//     }
+//     }
+//     else{
+//         cout<<"Entered Phone number is wrong"<<endl;
+//         output();
+//     }
+// }
+
+
+// int main(){
+//     phone_number phone;
+//     phone.input();
+//     phone.check_num();
+// }
+
+
+
+
+
+
+
+// ------------------------c++ lec 6-------------
+
+
+// calculator
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+
+// class Operation{
+//     private:
+//         int a;
+//         int b;
+//   public:
+//         inline void get(){
+//             cin>>a>>b;
+//         }
+//         inline void sum(){
+//             cout<<"Addition of two numbers: "<<a+b<<endl;
+//         }
+//         inline void difference(){
+//             cout<<"Difference of two numbers: "<<a-b<<endl;
+//         }
+//         inline void product(){
+//             cout<<"Product of two numbers: "<<a*b<<endl;}
+//         inline void division(){
+//             cout<<"Division of two numbers: "<<a/b<<endl;}
+//         inline void modulus(){
+//             cout<<"Modulus of two numbers: "<<a%b<<endl;}
+// };
+
+
+
+// int main(){
+//     Operation o;
+//     o.get();
+//     o.sum();
+//     o.difference();
+//     o.product();
+//     o.division();
+//     o.modulus();
+// }
+
+
+
+
+
+// lecture 6 c++
+
+// even numbers in square
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+
+// inline int countEvenNumbers(int a){
+//     int b=a*a;
+//     int count = 0;
+//     while(b>0){
+//         int temp=b%10;
+//         if(temp%2==0){
+//             count++;
+//         }
+//         b=b/10;}
+//         return count;
+// }
+// int main(){
+//     int x;
+//     cin>>x;
+//     cout<<countEvenNumbers(x);
+// }
+
+
+
+
+
+
+
+// average minimun maximum
+// You are using GCC
+// #include<iostream>
+// #include<iomanip>
+// using namespace std;
+
+// int main(){
+//     int x;
+//     cin>>x;
+//     double a[x];
+//     for(int i=0;i<x;i++){
+//         cin>>a[i];
+//     }
+//     double avg=0.0;
+//     double max=a[0];
+//     double min=a[0];
+    
+//     for(int i=0;i<x;i++){
+//         avg+=a[i];
+//         if(max<a[i]){
+//             max=a[i];
+//         }
+//         if(min>a[i]){
+//             min=a[i];
+//         }
+//     }
+    
+    
+//     cout<<fixed<<setprecision(2)<<"Average: "<<avg/x<<endl;
+//     cout<<fixed<<setprecision(2)<<"Minimum Value: "<<min<<endl;
+//     cout<<fixed<<setprecision(2)<<"Maximum Value: "<<max<<endl;
+// }
+
+
+
+
+
+
+// scientific value
+// You are using GCC
+// #include<iostream>
+// #include<iomanip>
+
+// using namespace std;
+
+// int main(){
+//     double a;
+//     cin>>a;
+//     cout<<scientific<<a;
+// }
+
+
+
+
+
+// switch case calculatetotalprice
+// #include<iostream>
+// #include<iomanip>
+// using namespace std;
+
+// void calculateTotalPrice(double x){
+//     cout<<fixed<<setprecision(2)<<x<<endl;
+// }
+// void calculateTotalPrice(double x,int q){
+//     cout<<fixed<<setprecision(2)<<x*q<<endl;
+// }
+// void calculateTotalPrice(double x,int q,double d){
+//     d=(x*q)-((x*q)*(d/100));
+//     cout<<fixed<<setprecision(2)<<d<<endl;
+// }
+
+// int swi(){
+//     int choice;
+//     double x,d,q;
+//     cin>>choice;
+//     while(true){
+//         if(choice==1){
+//             cin>>x;
+//             calculateTotalPrice(x);
+//             cin>>choice;
+//         }
+//         else if(choice==2){
+//             cin>>x>>q;
+//             calculateTotalPrice(x,q);
+//             cin>>choice;
+//         }
+//         else if(choice==3){
+//             cin>>x>>q>>d;
+//             calculateTotalPrice(x,q,d);
+//             cin>>choice;
+//         }
+//         else if(choice==4){
+//             return 0;
+//         }
+//         else{
+//             cout<<"Invalid choice! Please try again.";
+//             cin>>choice;
+//         }
+//     }
+// }
+// int main(){
+//     swi();
+// }
+
+
+
+
+
+// icecream shape
+// #include<iostream>
+// #include<iomanip>
+// #include<cmath>
+
+// using namespace std;
+
+// class icecream{
+//   public:
+//     void Quantity(double r){
+//         cout<<fixed<<setprecision(2)<<r*r*r;
+//     }
+//     void Quantity(double r,double h){
+//         cout<<fixed<<setprecision(2)<<r*r*h*M_PI*0.33;
+//     }
+// };
+
+
+// int main(){
+//     int choice;
+//     double r,h;
+//     cin>>choice;
+//     icecream i;
+//     if(choice==1){
+//         cin>>r;
+//         i.Quantity(r);
+//     }
+//     else if(choice==2){
+//         cin>>r>>h;
+//         i.Quantity(r,h);
+//     }
+// }
+
+
+
+
+
+
+// box volume
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+
+// class Box{
+//     private:
+//         int l;
+//     public:
+//         Box() : l(0){}
+        
+//         void get(int a){
+//             l=a;
+//         }
+//     friend void printVolume(Box b);
+// };
+
+// void printVolume(Box b){
+//     cout<<b.l*b.l*b.l;
+// }
+
+// int main(){
+//     int x;
+//     cin>>x;
+//     Box b;
+//     b.get(x);
+//     printVolume(b);
+// }
+
+
+
+
+
+
+
+// calculate fuel cost
+// #include<iostream>
+// #include<string>
+// #include<iomanip>
+// using namespace std;
+
+// class Car{
+//   private:
+//   string brand;
+//   double fuel;
+//     public:
+//     Car(const string& brand,double fuel): brand(brand),fuel(fuel){}
+//     friend double calculateFuelCost(const Car& car,double distance,double fuelprice);
+// };
+
+// double calculateFuelCost(const Car& car,double distance ,double fuelprice){
+//     return (distance/100.0)*car.fuel*fuelprice;
+// }
+
+// int main(){
+//     string brand;
+//     double fuel,distance,fuelprice;
+//     getline(cin,brand);
+//     cin>>fuel>>distance>>fuelprice;
+//     Car car(brand,fuel);
+//     double fuelcost=calculateFuelCost(car,distance,fuelprice);
+//     cout<<fixed<<setprecision(2);
+//     cout<<fuelcost;
+// }
+
+
+
+
+
+
+// reverse number
+// #include<iostream>
+// using namespace std;
+
+// void reverseNumber(int &a){
+//     int temp=0;
+//     while (a>0){
+//         temp=temp*10+(a%10);
+//         a/=10;
+//     }
+//     a=temp;
+// }
+
+// int main(){
+//     int x;
+//     cin>>x;
+//     reverseNumber(x);
+//     cout<<x;
+// }
+
+
+
+
+// call by reference x.y.z
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+
+// void shift(int& a, int& b, int& c){
+//     int temp=a;
+//     a=c;
+//     c=b;
+//     b=temp;
+// }
+// int& getLargest(int& a, int& b, int& c){
+//     if(b>=a && b>=c){
+//         return b;
+//     }
+//     else if(c>=a && c>=b){
+//         return c;
+//     }
+//     else{
+//         return a;
+//     }
+// }
+
+// int main(){
+//     int x,y,z;
+//     cin>>x>>y>>z;
+//     cout<<"Before Shift: x: "<<x<<" y: "<<y<<" z: "<<z<<endl;
+//     shift(x,y,z);
+//     cout<<"After Shift: x: "<<x<<" y: "<<y<<" z: "<<z<<endl;
+//     int m;
+//     cin>>m;
+//     int& ref=getLargest(x,y,z);
+//     ref=m;
+//     cout<<"After modification: x: "<<x<<" y: "<<y<<" z: "<<z<<endl;
+//     cout<<"The largest value among x, y, and z is: "<<m;
+    
+    
+// }
+
+
+
+
+
+// sum of range
+// You are using GCC
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+// int x,y,s=0;
+// cin>>x>>y;
+// for(int i=x;i<y+1;i++){
+//     s=s+i;
+// }
+// cout<<s;
+// }
+
+
+
+
+
+// gift,student,combination find using recurtion
+// #include <iostream>
+// #include <cmath>
+
+// using namespace std;
+
+// int getAllWays(int remainingSum, int power, int base) {
+//     if (remainingSum == 0) {
+//         return 1;
+//     }
+//     if (remainingSum < 0 || base == 0) {
+//         return 0;
+//     }
+
+//     int includeCurrentBase = getAllWays(remainingSum - pow(base, power), power, base - 1);
+//     int excludeCurrentBase = getAllWays(remainingSum, power, base - 1);
+
+//     return includeCurrentBase + excludeCurrentBase;
+// }
+
+// int main() {
+//     int x, n;
+//     cin >> x >> n;
+
+//     int base = static_cast<int>(pow(x, 1.0 / n));
+
+//     int result = getAllWays(x, n, base);
+//     cout << result << endl;
+
+//     return 0;
+// }
